@@ -19,12 +19,10 @@
 #ifndef ADAFRUIT_NEOPIXEL_H
 #define ADAFRUIT_NEOPIXEL_H
 
-#if (ARDUINO >= 100)
- #include <Arduino.h>
-#else
- #include <WProgram.h>
- #include <pins_arduino.h>
-#endif
+#include <stdlib.h>
+#include <stdint.h>
+
+extern uint32_t micros(void);
 
 // The order of primary colors in the NeoPixel data stream can vary
 // among device types, manufacturers and even different revisions of
@@ -150,7 +148,7 @@ class Adafruit_NeoPixel {
 
  private:
 
-  boolean
+  bool
 #ifdef NEO_KHZ400  // If 400 KHz NeoPixel support enabled...
     is800KHz,      // ...true if 800 KHz pixels
 #endif
@@ -169,12 +167,6 @@ class Adafruit_NeoPixel {
     wOffset;       // Index of white byte (same as rOffset if no white)
   uint32_t
     endTime;       // Latch timing reference
-#ifdef __AVR__
-  volatile uint8_t
-    *port;         // Output PORT register
-  uint8_t
-    pinMask;       // Output PORT bitmask
-#endif
 
 };
 

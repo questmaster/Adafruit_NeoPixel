@@ -1,10 +1,10 @@
-# Adafruit NeoPixel Library [![Build Status](https://travis-ci.org/adafruit/Adafruit_NeoPixel.svg?branch=master)](https://travis-ci.org/adafruit/Adafruit_NeoPixel)
+# Adafruit NeoPixel Library Fork
 
-Arduino library for controlling single-wire-based LED pixels and strip such as the [Adafruit 60 LED/meter Digital LED strip][strip], the [Adafruit FLORA RGB Smart Pixel][flora], the [Adafruit Breadboard-friendly RGB Smart Pixel][pixel], the [Adafruit NeoPixel Stick][stick], and the [Adafruit NeoPixel Shield][shield].
+Library for controlling single-wire-based LED pixels and strip such as the [Adafruit 60 LED/meter Digital LED strip][strip], the [Adafruit FLORA RGB Smart Pixel][flora], the [Adafruit Breadboard-friendly RGB Smart Pixel][pixel], the [Adafruit NeoPixel Stick][stick], and the [Adafruit NeoPixel Shield][shield].
 
-After downloading, rename folder to 'Adafruit_NeoPixel' and install in Arduino Libraries folder. Restart Arduino IDE, then open File->Sketchbook->Library->Adafruit_NeoPixel->strandtest sketch.
+This fork is changed to use a stm32F411 Discovery-Board and the CMSIS drivers to drive the LEDs.
 
-Compatibility notes: Port A is not supported on any AVR processors at this time
+Compatibility notes: An external micros()-function has to be provided for the library to work.
 
 [flora]:  http://adafruit.com/products/1060
 [strip]:  http://adafruit.com/products/1138
